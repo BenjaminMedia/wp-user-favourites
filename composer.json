@@ -1,0 +1,22 @@
+{
+    "name": "bonnier/wp-user-favourites",
+    "description": "A plugin for marking articles as favourites.",
+    "type": "wordpress-plugin",
+    "require": {
+        "bonnier/willow-mu-plugins": "^1.2"
+    },
+    "require-dev": {
+        "johnpbloch/wordpress": "^4.9"
+    },
+    "authors": [
+        {
+            "name": "Bonnier Interactive",
+            "email": "interactive@bonnier.dk"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Bonnier\\WP\\UserFavourites\\": "src"
+        }
+    }
+}
