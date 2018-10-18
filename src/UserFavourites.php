@@ -8,6 +8,8 @@ use Bonnier\WP\UserFavourites\Http\Controller;
 
 class UserFavourites
 {
+    protected static $instance;
+
     /**
      * Returns the instance of this class.
      */
@@ -21,6 +23,11 @@ class UserFavourites
     }
 
     private function __construct()
+    {
+        add_action('rest_api_init', [__CLASS__, 'registerApiControllers']);
+    }
+
+    public static function registerApiControllers()
     {
         $controller = new Controller();
         $controller->register_routes();
