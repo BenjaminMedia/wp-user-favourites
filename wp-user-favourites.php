@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: User Favourites
- * Version: 1.0.1
+ * Version: 1.1.0
  * Plugin URI: https://github.com/BenjaminMedia/wp-user-favourites
  * Description: A plugin for marking articles as favourites.
  * Author: Bonnier Interactive
