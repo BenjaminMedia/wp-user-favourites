@@ -75,6 +75,7 @@ class DbRepository
         $favourites = $this->get($userId);
         if (($key = array_search($compositeId, $favourites[$locale])) !== false) {
             unset($favourites[$locale][$key]);
+            $favourites[$locale] = array_values($favourites[$locale]);
         }
         return $this->updateRow($userId, $favourites);
     }
