@@ -67,6 +67,7 @@ class DbRepository
     {
         $favourites = $this->get($userId);
         array_push($favourites[$locale], $compositeId);
+        $favourites[$locale] = array_unique($favourites[$locale]);
         return $this->updateRow($userId, $favourites);
     }
 
