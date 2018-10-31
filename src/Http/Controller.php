@@ -44,7 +44,7 @@ class Controller extends \WP_REST_Controller
         $favourites = $this->dbRepository->get($userId);
 
         return new \WP_REST_Response([
-            "data" => $favourites[$locale]
+            "data" => array_map('intval', $favourites[$locale])
         ]);
     }
 
