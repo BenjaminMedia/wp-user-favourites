@@ -44,7 +44,8 @@ class DbRepository
                 $this->db->prepare(
                     "SELECT `favourites`
                         FROM wp_user_favourites
-                        WHERE `user_id` = %s",
+                        WHERE `user_id` = %s
+                        LIMIT 100",
                     $userId
                 )
             );
