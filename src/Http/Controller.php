@@ -30,6 +30,15 @@ class Controller extends \WP_REST_Controller
             'methods' => \WP_REST_Server::EDITABLE,
             'callback' => [$this, 'deleteUserFavourites']
         ]);
+        /* adding extra endpoint to go around the cache */
+        register_rest_route('app', '/user/favourites/add/(?P<id>[a-zA-Z0-9-]+)/article_id/(?P<article_id>[a-zA-Z0-9-]+)', [
+            'methods' => \WP_REST_Server::EDITABLE,
+            'callback' => [$this, 'setUserFavourites']
+        ]);
+        register_rest_route('app', '/user/favourites/delete/(?P<id>[a-zA-Z0-9-]+)/article_id/(?P<article_id>[a-zA-Z0-9-]+)', [
+            'methods' => \WP_REST_Server::EDITABLE,
+            'callback' => [$this, 'deleteUserFavourites']
+        ]);
     }
 
     /**
